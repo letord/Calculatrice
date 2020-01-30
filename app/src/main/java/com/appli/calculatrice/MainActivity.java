@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button huit = null;
     Button neuf = null;
     Button zero = null;
+    Button plus = null;
     TextView res = null;
     int result=0;
     int tampon=0;
@@ -36,8 +37,16 @@ public class MainActivity extends AppCompatActivity {
         huit=findViewById(R.id.button8);
         neuf=findViewById(R.id.button9);
         zero=findViewById(R.id.button0);
+        plus=findViewById(R.id.buttonPlus);
         res=findViewById(R.id.Res);
         MajRes();
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                result+=tampon;
+                tampon=0;
+            }
+        });
         un.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +81,30 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 tampon=tampon*10+6;
+            }
+        });
+        sept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tampon=tampon*10+7;
+            }
+        });
+        huit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tampon=tampon*10+8;
+            }
+        });
+        neuf.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tampon=tampon*10+9;
+            }
+        });
+        zero.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tampon=tampon*10;
             }
         });
 
