@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
     Button plusMoins=null;
 
 
-    int result=0;
-    int premierNb=0;
-    int tampon=0;
+    double result=0;
+    double premierNb=0;
+    double tampon=0;
     int indice=20;
 
     @Override
@@ -250,10 +250,13 @@ public class MainActivity extends AppCompatActivity {
                             popUp("Impossible de diviser par zéro");
                         }
                         else{
-                            result=premierNb/tampon;
+                            //result=premierNb/tampon;
+                            double x=premierNb/tampon;
+                            System.out.println(premierNb+ " divisé par "+tampon);
+                            System.out.println(x);
                             ChangeSigne("");
                             MajResFirst("");
-                            MajRes(result);
+                            MajRes(x);
                         }
                         break;
                 }
@@ -262,14 +265,14 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    void MajRes(int s){
-        String x = ""+s;
-        res.setText(x);
+    void MajRes(double s){
+        res.setText(""+s);
     }
+
     void ChangeSigne(String s){
         signe.setText(s);
     }
-    void MajResFirst(int s){
+    void MajResFirst(double s){
         FirstRes.setText(""+s);
     }
     void MajResFirst(String s){
