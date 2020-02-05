@@ -2,6 +2,7 @@ package com.appli.calculatrice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     TextView res = null;
     TextView signe =null;
     TextView FirstRes=null;
+    Button plusMoins=null;
 
 
     int result=0;
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         del=findViewById(R.id.buttonDel);
         egual=findViewById(R.id.buttonEqual);
         delAll=findViewById(R.id.buttonDellAll);
-
+        plusMoins=findViewById(R.id.BPlusMoins);
         un.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -211,6 +213,13 @@ public class MainActivity extends AppCompatActivity {
                 indice=20;
                 tampon=0;
                 MajResFirst("");
+                MajRes(tampon);
+            }
+        });
+        plusMoins.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tampon=tampon*(-1);
                 MajRes(tampon);
             }
         });
